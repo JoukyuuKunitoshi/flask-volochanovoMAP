@@ -1,0 +1,55 @@
+
+
+<div id="feedback-popup" class="popup">
+    <div class="popup-content" id="popup-content">
+        <span class="close" onclick="document.getElementById('feedback-popup').style.display='none'">&times;</span>
+        <form id="feedback-form" class="feedback-form">
+            <label for="name">Ваше имя:</label>
+            <input type="text" id="name" name="name" required><br><br>
+            
+            <label>Выберите основную категорию:</label><br>
+            <label class="radio-label">
+                <input type="radio" id="main_site" name="category" value="Основной сайт" required> Основной сайт
+            </label>
+            <label class="radio-label">
+                <input type="radio" id="interactive_map" name="category" value="Интерактивная карта"> Интерактивная карта
+            </label><br><br>
+            
+            <label for="feedback_type">Тип обращения:</label>
+            <select id="feedback_type" name="feedback_type" required>
+                <option value="Фактическая ошибка">Фактическая ошибка</option>
+                <option value="Грамматическая ошибка">Грамматическая ошибка</option>
+                <option value="Вопрос">Вопрос</option>
+                <option value="Пожелание">Пожелание</option>
+                <option value="Предложение">Предложение</option>
+                <option value="Другое">Другое</option>
+            </select><br><br>
+
+            <label for="text">
+                Обращение:
+                <input type="text" id="text" name="text" style="padding-bottom: 50px;">
+            </label>
+            
+            <label for="contact_permission">
+                <input type="checkbox" id="contact_permission" name="contact_permission" onchange="toggleContactField()">
+                Со мной можно связаться
+            </label><br><br>
+            
+            <div id="contact-info" style="display:none;">
+                <label for="contact_info">Контактная информация:</label>
+                <input type="text" id="contact_info" name="contact_info"><br><br>
+            </div>
+            
+            <input type="submit" value="Отправить" onclick="submitForm(event)">
+        </form>
+    </div>
+</div>
+
+
+
+
+
+
+<button onclick="document.getElementById('feedback-popup').style.display='block'" class="feedback-button">Оставить отзыв</button>
+
+<script src="{{ url_for('static', filename='map/toggleContactField.js') }}"></script>

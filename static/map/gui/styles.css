@@ -1,0 +1,212 @@
+/* Основные стили для HTML и Body */
+html, body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+/* Основные стили для контейнера */
+.container {
+  display: flex;
+  height: 100%;
+  background-color: #56a85b;
+}
+
+/* Стили для содержимого информации */
+.info-content {
+  color: white;
+  overflow-y: auto; /* Добавляем прокрутку для содержимого */
+  height: calc(100% - 20px); /* Высота содержимого минус высота drag handle */
+  padding-right: 15px;
+}
+
+/* Стили для информационной панели */
+.info-panel {
+  width: 300px; /* Ширина панели информации */
+  padding: 10px 10px 0 10px; /* Отступы */
+  flex-shrink: 0; /* Не уменьшается в размерах */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Стили для карты */
+.map-container {
+  flex-grow: 1; /* Занимает оставшееся пространство */
+  position: relative;
+  height: 100%;
+  overflow: auto; /* Добавляем прокрутку для карты */
+}
+
+/* Стили для карты */
+#map {
+  width: 100%; /* Карта занимает всё доступное пространство */
+  height: 100%;
+}
+
+/* Стили для зеленой круглой кнопки */
+.green-button {
+  position: absolute;
+  bottom: 25%;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: green;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 16px;
+  cursor: pointer;
+  background-image: url('../gps.png');
+  background-size: 70%;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+
+.green-button:hover {
+  background-color: darkgreen;
+}
+
+
+.green-arrow {
+  margin-top: 50px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.arrow {
+  width: 42px;
+}
+
+
+.quote {
+  font-style: italic; /* Наклонный шрифт */
+  text-align: center; /* Выравнивание по центру */
+ 
+  margin: 0 auto; /* Центрирование */
+  max-width: 80%; /* Максимальная ширина цитаты */
+}
+
+.drag-handle span {
+  display: none;
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 9998;
+}
+
+.overlay.show {
+  display: block;
+}
+
+/* Адаптивные стили для мобильных устройств */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column-reverse; /* Поменять порядок элементов на колонку и развернуть его (снизу вверх) */
+  }
+
+  .info-panel {
+    position: relative;
+    width: 100%; /* Полная ширина на мобильных устройствах */
+    height: 300px; /* Начальная высота панели информации */
+    min-height: 100px; /* Минимальная высота панели информации */
+    max-height: 80vh; /* Максимальная высота панели информации */
+    display: flex;
+    flex-direction: column;
+  }
+
+  .map-container {
+    height: calc(100% - 300px); /* Высота карты на мобильных устройствах */
+  }
+
+  .green-button {
+    margin-top: -125px;
+    bottom: auto;
+    right: 37px;
+  }
+
+  /* Стили для захвата (drag handle) только на мобильных устройствах */
+  .drag-handle {
+    width: 100%;
+    height: 20px; /* Высота захвата */
+    background-color: #444; /* Цвет захвата */
+    cursor: grab; /* Изменение курсора при наведении */
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: white; /* Цвет текста */
+    font-size: 14px; /* Размер шрифта */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .drag-handle span {
+    display: block;
+    margin-right: 17px;
+  }
+
+  .small-image:hover {
+    max-width: 100%;
+    max-height: 100%;
+    transition: transform 0.3s ease;
+  }
+}
+
+/* Стили для изображений */
+.small-image {
+  max-width: 100%;
+  max-height: 100%;
+  transition: transform 0.3s ease;
+  margin-top: 3%;
+  
+}
+
+@media (min-width: 768px){
+  .small-image:hover {
+    transform: scale(1.1);
+  }
+}
+
+
+.expanded-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  z-index: 9999;
+  cursor: pointer;
+}
+
+
+/* Работает в Chrome, Edge и Safari */
+*::-webkit-scrollbar {
+  width: 10px;
+  border-radius: 10%;
+}
+
+*::-webkit-scrollbar-track {
+  width: 8px;
+  border-radius: 10%;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: rgb(255, 255, 255);
+  border-radius: 20px;
+}

@@ -1,0 +1,48 @@
+.img-wrapper{
+    display: flex;
+    min-height: 100vh;
+    min-width: fit-content;
+    min-width: -moz-fit-content;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: center;
+
+}
+
+.img {
+    overflow: scroll;
+}
+
+.square {
+    border-style: solid;
+    border-color: green;
+    height: 809px;
+    width: 649px;
+    position: absolute;
+    top: 665px;
+    left: 461px;
+}
+
+.position {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    border-radius: 50%;
+    right: -10px;
+    top: -10px;
+    
+    /* [37.2496984, 55.6834147] */
+}
+
+.marker-class {
+    width: 20px;
+    height: 20px;
+    
+    background-color: #ff0000;
+    border-style: solid;
+    border-color: #ffffff;
+    border-width: 7px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px 0px black;
+}

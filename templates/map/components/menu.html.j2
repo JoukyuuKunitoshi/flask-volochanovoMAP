@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='map/gui/menu.css') }}">
+    
+</head>
+<body>
+    
+    <a  href="/" id="green-arrow-link" style="text-decoration: none;display: block;width: 50px;">
+        <div class="green-arrow" >
+            <img class="arrow" src="{{ url_for('static', filename='map/img/arrow.png') }}">
+        </div>
+    </a>
+        
+
+
+    <h1>Главное Меню</h1>
+    <h2>Добро пожаловать на сайт-гид по Волочаново.</h2>
+    <h3>Зелёная точка на карте - ваше местоположение. Чтобы узнать подробнее о местных достопримечательностях вам нужно подойти к ним, либо нажать на фотографию ниже</h3>
+    {%include '/components/feedbachForm.html.j2'%}
+    <ul class="main-menu">
+    {% for object in img_list %}
+        <li>
+            <div style="padding-top: 50px;"></div>
+            <img src="{{ url_for('static', filename='map/img/' + object + '/index.jpeg') }}" class="small-image" onclick="menuLink('{{object}}')">
+            <div class="object-name">{{obj_dict[object]}}</div>
+        </li>
+    {% endfor %}
+    </ul>
+
+    
+
+    
+
+
+
+</body>
+
+
+
+
+</html>

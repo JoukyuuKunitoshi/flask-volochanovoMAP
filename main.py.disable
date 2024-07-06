@@ -1,0 +1,28 @@
+from flask import *
+
+app = Flask(__name__)
+
+app.secret_key = "secret key"
+
+@app.route("/")
+def index():
+    return render_template("index.html.j2")
+
+@app.route("/contacts")
+def contacts():
+    return render_template("contacts.html.j2")
+
+@app.route("/links")
+def links():
+    return render_template("links.html.j2")
+
+@app.route("/objects")
+def objects():
+    return render_template("objects.html.j2")
+
+@app.route("/heraldry")
+def heraldry():
+    return render_template("heraldry.html.j2")
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0")

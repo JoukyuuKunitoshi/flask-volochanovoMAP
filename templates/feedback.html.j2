@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Деревня Волочаново</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='village/favicon.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='village/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='feedback.css') }}">
+</head>
+<body>
+    {% include 'village/components/header.html' %}
+
+    <div class="container">
+        {% for feedback in feedbacks %}
+            <div class="feedback-box">
+                <h3>{{ feedback.name }}</h3>
+                <p><strong>Категория:</strong> {{ feedback.category }}</p>
+                <p><strong>Тип отзыва:</strong> {{ feedback.feedback_type }}</p>
+                <p>{{ feedback.text }}</p>
+                {% if feedback.contact_info %}
+                    <p><strong>Контактная информация:</strong> {{ feedback.contact_info }}</p>
+                {% endif %}
+
+                <form action="/feedback" method="post" class="delete-form">
+                    <input type="hidden" name="_method" value="delete">
+                    <input type="hidden" name="key" value="">
+                    <input type="hidden" name="objectID" value="{{ feedback._id }}">
+                    <button type="submit" style="margin-bottom: 50px;">Удалить</button>
+                </form>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+<script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const key = urlParams.get('key');
+            const forms = document.querySelectorAll('.delete-form');
+
+            forms.forEach(form => {
+                form.querySelector('input[name="key"]').value = key;
+            });
+        });
+    </script>
+</html>

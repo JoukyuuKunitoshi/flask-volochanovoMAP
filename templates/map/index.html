@@ -1,0 +1,73 @@
+<!-- Разработчики:
+    
+    Админ Алексеевич, тг: @SpektrX
+    Wexi
+    Паша Ящик -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Карта Волочаново</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='map/gui/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='map/styles.css') }}">
+
+    <script>{{ js | safe }}</script>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="info-panel">
+
+            <button class="green-button" onclick="mapFocus()"></button>
+            
+            <div class="drag-handle"><span>☰</span></div>
+
+            <div class="info-content" id="info-content">
+ 
+
+
+
+                
+
+                {# {%include "components/objects/shop.html.j2"%} #}
+
+
+                
+
+
+
+
+
+            </div>
+
+
+
+
+            
+
+        </div>
+        <div class="map-container" >
+            <div id="map"></div>
+            
+        </div>
+
+        
+
+
+        <!-- Все скрипты для компонентов должны подключатся через index -->
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+    
+    <script src="{{ url_for('static', filename='map/initmap.js') }}"></script>
+    <script src="{{ url_for('static', filename='map/expand.js') }}"></script>
+    <script src="{{ url_for('static', filename='map/drag.js') }}"></script>
+    <script src="{{ url_for('static', filename='map/toggleContactField.js') }}"></script>
+    
+    
+        
+    
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Деревня Волочаново</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='village/favicon.ico') }}">
+    <link rel="stylesheet" href="{{url_for('static', filename='village/style.css')}}">
+</head>
+<body>
+    
+    {% include 'village/components/header.html' %}
+
+    <header class="image-header" style="background-image: url('{{ url_for('static', filename='village/img/header.jpg') }}');">
+       
+    </header>
+
+    <div class="container">
+        <section class="description" style="margin-bottom: 140%;">
+            <h1>НАШИ КОНТАКТЫ</h1>
+   
+            <h4><p>143711, Московская область, Шаховской район, д. Волочаново, ул .Деревенская, д. 16, </p>
+
+            <p>Сайт <a style="color: black;" href="https://volochanovo.ru/">https://volochanovo.ru/</a>, <br>E-mail voloshanovo@list.ru,<br>Тел. 8(965)408-25-14</p>
+            
+            <p>Администратор сайта: Федотов Валерий Аркадьевич</p></h4>
+
+    
+        </section>
+    </div>
+
+{% include 'village/components/footer.html' %}
+</body>
+<script src="{{ url_for('static', filename='village/photo.js') }}"></script>
+</html>

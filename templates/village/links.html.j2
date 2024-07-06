@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Деревня Волочаново</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='village/favicon.ico') }}">
+    <link rel="stylesheet" href="{{url_for('static', filename='village/style.css')}}">
+</head>
+<body>
+    
+    {% include 'village/components/header.html' %}
+
+    <header class="image-header" style="background-image: url('{{ url_for('static', filename='village/img/header.jpg') }}');">
+       
+    </header>
+
+    <div class="container">
+        <section class="description">
+   
+            <div class="history-essays">
+                <h2>ОЧЕРКИ ИЗ ИСТОРИИ ВОЛОЧАНОВО</h2>
+                <p>В ноябре-декабре 2011 года организационный комитет по подготовке и проведению мероприятий связанных с 500-летием деревни Волочаново (Шаховской район, Московская область) разместил на электронном портале московской областной газеты «Агентство новостей Подмосковья» серию очерков посвященных истории нашей деревни.</p>
+                <p>Фотографии, сопровождающие очерки получены из личных архивов семей Шереметевых, Римских-Корсаковых и Голицыных (некоторые фото публикуются впервые).</p>
+                <p>Автор очерков житель Волочаново Федотов Валерий Аркадьевич.</p>
+                <p>Очерки имеют общее название "Неизвестная Русская История. Волочаново".</p>
+                <p>Для открытия очерка щелкните дважды левой клавишей мышки по ссылке очерка.</p>
+            
+                <ol>
+                    <li><a href="http://www.mosoblpress.ru/38/46854/?sphrase_id=67590" style="color: black;">Неизвестная Русская История. Волочаново. Чайковский</a></li>
+                    <li><a href="http://www.mosoblpress.ru/38/46901/?sphrase_id=67590" style="color: black;">Неизвестная Русская История. Волочаново. Гайдебуров</a></li>
+                    <li><a href="http://www.mosoblpress.ru/38/47575/?sphrase_id=67590" style="color: black;">Неизвестная Русская История. Волочаново. Безобразов</a></li>
+                    <li><a href="http://www.mosoblpress.ru/43/48006/?sphrase_id=74703" style="color: black;">Неизвестная Русская История. Волочаново. Кутузов. Суворов. Наполеон</a></li>
+                    <li><a href="http://www.mosoblpress.ru/43/50126/?sphrase_id=74703" style="color: black;">Неизвестная Русская История. Волочаново. Шереметевы</a></li>
+                    <li><a href="http://www.mosoblpress.ru/43/53134/?sphrase_id=74703" style="color: black;">Неизвестная Русская История. Волочаново. Римские-Корсаковы</a></li>
+                    <li><a href="http://www.mosoblpress.ru/43/53135/?sphrase_id=74703" style="color: black;">Неизвестная Русская История. Волочаново. Голицыны</a></li>
+                    <li><a href="http://www.mosoblpress.ru/38/53312/?sphrase_id=74923" style="color: black;">Неизвестная Русская История. Волочаново. Волок</a></li>
+                    <li><a href="http://www.mosoblpress.ru/38/53313/?sphrase_id=74923" style="color: black;">Неизвестная Русская История. Волочаново. Кривичи</a></li>
+                    <li><a href="http://www.mosoblpress.ru/38/53428/?sphrase_id=74977" style="color: black;">Неизвестная Русская История. Волочаново. Григорьев</a></li>
+                    <li><a href="http://www.mosoblpress.ru/38/53429/?sphrase_id=74977" style="color: black;">Неизвестная Русская История. Волочаново. Никологорский</a></li>
+                    <li><a href="http://www.mosoblpress.ru/38/53430/?sphrase_id=74977" style="color: black;">Неизвестная Русская История. Волочаново. Феникс</a></li>
+                    <li><a href="http://www.mosoblpress.ru/43/69020/?sphrase_id=93783" style="color: black;">Неизвестная Русская История. Волочаново. Головины</a></li>
+                </ol>
+            </div
+
+    
+        </section>
+    </div>
+
+{% include 'village/components/footer.html' %}
+</body>
+<script src="{{ url_for('static', filename='village/photo.js') }}"></script>
+</html>

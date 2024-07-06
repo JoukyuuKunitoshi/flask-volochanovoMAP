@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="yandex-verification" content="9d4241596f1663b3" />
+    <title>Деревня Волочаново</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='/favicon.ico') }}">
+    <link rel="stylesheet" href="{{url_for('static', filename='village/style.css')}}">
+</head>
+<body>
+    
+    {% include 'village/components/header.html' %}
+
+    {% if param %}
+        <h3 style="text-align: center; padding: 0 15px;">Вы используете старую версию приложения, актуальную версию вы можете скачать по ссылке ниже</h3>
+    {% endif %}
+    <h3 style="text-align: center; padding: 0 15px;">Это приложение предназначено для андроид устройств,оно дублирует функционал интерактивной карты с сайта.</h3>
+    <h3 style="text-align: center; padding: 0 15px;"></h3>
+    
+    <table style="margin: 0 auto; text-align: center; border-collapse: collapse; margin-top:5%;">
+        <tr>
+            <td style="border: 1px solid black; padding: 10px;">Версия</td>
+            <td style="border: 1px solid black; padding: 10px;">{{version}}</td>
+        </tr>
+        <tr>
+           <td style="border: 1px solid black; padding: 10px;">Обновлено</td>
+           <td style="border: 1px solid black; padding: 10px;"> Обновлено 14 июня 2024 г. в 15:15</td>
+        </tr>
+        <tr>
+            <td style="border: 1px solid black; padding: 10px;">Размер</td>
+            <td style="border: 1px solid black; padding: 10px;">5,84 МБ</td>
+        </tr>
+        <tr>
+            <td style="border: 1px solid black; padding: 10px;">Требуемые разрешения</td>
+            <td style="border: 1px solid black; padding: 10px;">доступ к GPS</td>
+        </tr>
+    </table>
+    <h2 style="color: black; margin-top:5%; text-align: center; padding: 0 15px;"><a style="color: black;" href="{{url_for('static', filename='volochanovo.apk')}}">Скачать</a></h2>
+    {# {% include 'village/components/footer.html' %} #}
+</body>
+<script src="{{ url_for('static', filename='village/photo.js') }}"></script>
+<script src="{{ url_for('static', filename='map/toggleContactField.js') }}"></script>
+</html>

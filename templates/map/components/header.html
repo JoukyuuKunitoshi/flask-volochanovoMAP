@@ -1,0 +1,29 @@
+
+<!-- Разработчик: Админ Алексеевич
+ТГ: @SpektrX -->
+<header>
+    <h1>Волочаново</h1>
+    
+    <nav class="desktop-nav">
+        <a href="/">История</a>
+        <a href="/contacts">Контакты </a>
+        <a href="/links">Очерки из истории</a>
+        <a href="/heraldry">Геральдика </a>
+        <a href="/objects">Гордость</a>
+    </nav>
+    <div class="burger-container">
+        <button class="openbtn" onclick="toggleNav()">&#9776;</button>
+    </div>
+
+
+    <nav id="mySidebar" class="sidebar">
+        
+        <a href="/">История деревни Волочаново</a>
+        <a href="/contacts">Наши контакты</a>
+        <a href="/links">Очерки из истории Волочаново</a>
+        <a href="/heraldry">Геральдика деревни Волочаново</a>
+        <a href="/objects">Гордость Волочаново - объекты созданные руками жителей деревни</a>
+    </nav>
+    <div id="overlay" class="overlay" onclick="closeNav()"></div>
+</header>
+<script src="{{ url_for('static', filename='map/nav.js') }}"></script>
